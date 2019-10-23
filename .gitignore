@@ -2,13 +2,7 @@
 node_modules
 
 /dist
-
-public/js/*
-public/css/*
-public/images/*
-public/font/*
-public/index.html
-public/favicon.ico
+/public/**/*
 
 # local env files
 .env.local

@@ -1,25 +1,12 @@
-import React from 'react'
-import * as ReactRouterDOM from 'react-router-dom'
-import ReactDOM from 'react-dom'
+import React, { Fragment } from 'react'
+import { Route } from 'react-router-dom'
 
 const h = React.createElement
 
-console.log('child file load')
-
-function About() {
-  return h('h1', null, 'react about')
-}
-
-function App() {
-  return h(ReactRouterDOM.HashRouter, {}, [
-    h(ReactRouterDOM.Switch, null, [
-      h(ReactRouterDOM.Route, { path: '/second', component: About })
-    ])
+_MICRO_APP_CONFIG.addReactRoutes(
+  h(Fragment, null, [
+    h(Route, { path: '/second/order/latest' }, '最近订单'),
+    h(Route, { path: '/second/order/back' }, '退款售后'),
+    h(Route, { path: '/second/jifen' }, '我的积分')
   ])
-}
-
-console.log('child mount')
-ReactDOM.render(
-  <App />,
-  document.getElementById('react-root')
 )
